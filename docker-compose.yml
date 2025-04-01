@@ -9,20 +9,26 @@ services:
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
     depends_on:
       - db
+    env_file:
+  	  - .env
 
   llm:
     image: sanjanats3/vizai-llm:latest
     environment:
       - LLM_MODEL=gemini-1.5-flash
+    env_file:
+  	  - .env
 
   frontend:
     image: sanjanats3/vizai-frontend:latest
     ports:
-      - "3000:3000"
+      - "5173:5173"
     environment:
       - VITE_BACKEND_URL=http://backend:8000
     depends_on:
       - backend
+    env_file:
+      - .env
 
   db:
     image: postgres:latest
