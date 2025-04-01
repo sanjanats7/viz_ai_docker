@@ -10,14 +10,14 @@ services:
     depends_on:
       - db
     env_file:
-  	  - .env
+      - .env
 
   llm:
     image: sanjanats3/vizai-llm:latest
     environment:
       - LLM_MODEL=gemini-1.5-flash
     env_file:
-  	  - .env
+      - .env
 
   frontend:
     image: sanjanats3/vizai-frontend:latest
@@ -36,4 +36,3 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
-
