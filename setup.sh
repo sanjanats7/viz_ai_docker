@@ -44,3 +44,13 @@ EOF
 
 echo ".env file created successfully!"
 
+echo "Starting Viz_AI services..."
+docker compose up -d
+
+echo "✅ Viz_AI setup completed successfully!"
+
+echo "🌍 Access your application at:"
+echo "   - Frontend: http://localhost:5173"
+
+echo "🔄 To check running containers, use: docker ps"
+echo "📜 To view logs, use: docker compose logs -f"
